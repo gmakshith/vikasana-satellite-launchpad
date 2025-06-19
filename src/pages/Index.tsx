@@ -143,9 +143,9 @@ const Index = () => {
         <div className="text-center z-10 px-4">
           <div className="flex justify-center items-center mb-8">
             <img 
-              src="/lovable-uploads/f68be05f-bafa-4c8f-83be-d6cec287b1e2.png" 
+              src="/lovable-uploads/6925f3f5-f9d2-42ab-83f5-0a601c228f5e.png" 
               alt="Vikasana Logo" 
-              className="h-24 w-auto filter brightness-0 invert"
+              className="h-32 w-auto"
             />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
