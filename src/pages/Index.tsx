@@ -145,7 +145,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/f68be05f-bafa-4c8f-83be-d6cec287b1e2.png" 
               alt="Vikasana Logo" 
-              className="h-20 w-auto filter brightness-0 invert"
+              className="h-24 w-auto filter brightness-0 invert"
             />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
