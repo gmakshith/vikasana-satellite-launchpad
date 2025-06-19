@@ -148,13 +148,13 @@ const Index = () => {
               className="h-32 w-auto"
             />
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             VIKASANA
           </h1>
-          <p className="text-2xl md:text-4xl mb-4 text-gray-300">
+          <p className="text-2xl md:text-4xl mb-4 text-white">
             Student Satellite Team
           </p>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Join India's premier student satellite development program. Build the future of space technology with us.
           </p>
           <div className="flex justify-center space-x-8 mb-12">
@@ -166,13 +166,13 @@ const Index = () => {
       </ParallaxSection>
 
       {/* Positions Section */}
-      <ParallaxSection className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <ParallaxSection className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Open Positions
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Choose your path in satellite development. Each role offers unique challenges and opportunities to shape the future of space technology.
             </p>
           </div>
@@ -181,24 +181,24 @@ const Index = () => {
             {positions.map((position) => (
               <div 
                 key={position.id}
-                className="bg-gray-900/50 backdrop-blur-md border border-gray-700 rounded-xl p-6 hover:border-white transition-all duration-300 cursor-pointer group"
+                className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-white hover:bg-gray-800 transition-all duration-300 cursor-pointer group"
                 onClick={() => handlePositionSelect(position)}
               >
                 <div className="text-4xl mb-4">{position.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gray-300 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gray-200 transition-colors">
                   {position.title}
                 </h3>
-                <p className="text-gray-400 mb-4 text-sm">
+                <p className="text-gray-300 mb-4 text-sm">
                   {position.shortDescription}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {position.requirements.slice(0, 3).map((req, index) => (
-                    <span key={index} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">
+                    <span key={index} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded border border-gray-600">
                       {req}
                     </span>
                   ))}
                 </div>
-                <Button variant="outline" className="w-full bg-transparent border-gray-600 text-gray-300 hover:bg-white hover:text-black">
+                <Button variant="outline" className="w-full bg-black border-gray-600 text-white hover:bg-white hover:text-black">
                   Learn More
                 </Button>
               </div>
@@ -208,17 +208,63 @@ const Index = () => {
       </ParallaxSection>
 
       {/* Mission Section */}
-      <ParallaxSection className="py-20 bg-gradient-to-b from-gray-900 to-black">
+      <ParallaxSection className="py-20 bg-black border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
           <Sparkles className="h-16 w-16 mx-auto mb-8 text-white animate-spin" />
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mb-12 text-white">
             Our Mission
           </h2>
-          <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            To develop cutting-edge satellite technology through hands-on learning, innovation, and collaboration. 
-            We're building the next generation of space engineers who will push the boundaries of what's possible 
-            in satellite design and space exploration.
-          </p>
+          <div className="max-w-6xl mx-auto space-y-8">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              We are a passionate and multidisciplinary team of student innovators embarking on an ambitious journey to design, develop, and deploy a fully functional student satellite. Our goal is to participate in ISRO's prestigious student satellite initiative — a platform that empowers academic institutions to develop indigenous satellite missions with potential guidance and support from ISRO.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Our mission is to contribute meaningfully to space science and technology through hands-on, end-to-end satellite development — from mission planning and subsystem design to integration, testing, and launch-readiness.
+            </p>
+            <div className="bg-gray-900 border border-gray-700 rounded-xl p-8 mx-auto max-w-4xl">
+              <h3 className="text-2xl font-bold mb-6 text-white">Current Phase & Vision</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div>
+                  <h4 className="text-lg font-semibold mb-3 text-white">Present Status</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      Proposal and early development phase
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      Aligning with ISRO's standards and requirements
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      Seeking technical mentorship and testing facilities
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold mb-3 text-white">Target Applications</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      Earth observation systems
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      Communication technologies
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      Scientific experimentation
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      Environmental monitoring
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </ParallaxSection>
 
