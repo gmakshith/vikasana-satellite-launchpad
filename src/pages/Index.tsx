@@ -139,26 +139,32 @@ const Index = () => {
       <SpaceBackground />
       
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative">
+      <section className="min-h-screen flex items-center justify-center relative bg-black">
         {/* Floating Space Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 animate-pulse">
             <Star className="h-8 w-8 text-white opacity-70" />
           </div>
           <div className="absolute top-32 right-20 animate-bounce delay-100">
-            <Satellite className="h-10 w-10 text-gray-300" />
+            <Satellite className="h-10 w-10 text-white opacity-80" />
           </div>
           <div className="absolute bottom-40 left-20 animate-pulse delay-200">
-            <Moon className="h-12 w-12 text-gray-400" />
+            <Moon className="h-12 w-12 text-gray-300" />
           </div>
-          <div className="absolute top-40 right-40 animate-spin slow">
+          <div className="absolute top-40 right-40 animate-spin-slow">
             <Orbit className="h-16 w-16 text-white opacity-50" />
           </div>
           <div className="absolute bottom-60 right-10 animate-pulse delay-300">
             <Zap className="h-6 w-6 text-white" />
           </div>
           <div className="absolute top-60 left-40 animate-bounce delay-400">
-            <Sun className="h-8 w-8 text-yellow-400 opacity-80" />
+            <Sun className="h-8 w-8 text-yellow-300 opacity-80" />
+          </div>
+          <div className="absolute top-1/4 left-1/4 animate-pulse delay-500">
+            <Star className="h-4 w-4 text-white opacity-60" />
+          </div>
+          <div className="absolute bottom-1/3 right-1/3 animate-bounce delay-600">
+            <Star className="h-6 w-6 text-gray-400 opacity-70" />
           </div>
         </div>
 
@@ -167,7 +173,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/6925f3f5-f9d2-42ab-83f5-0a601c228f5e.png" 
               alt="Vikasana Logo" 
-              className="h-48 w-auto md:h-56 lg:h-64"
+              className="h-56 w-auto md:h-64 lg:h-72"
             />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -186,13 +192,6 @@ const Index = () => {
               in national and international competitions, and host technical events of global 
               significance.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed mt-4">
-              From building space rovers and satellite models to automating real-world systems 
-              through robotics and software, the club empowers students to innovate with purpose. 
-              Through mentorship, interdisciplinary teamwork, and exposure to industry challenges, 
-              Vikasana continues to contribute to the university's mission of fostering future-ready 
-              innovators and leaders.
-            </p>
           </div>
           <div className="flex justify-center space-x-8 mb-12">
             <Rocket className="h-12 w-12 text-white animate-pulse" />
@@ -206,7 +205,7 @@ const Index = () => {
       <section className="py-32 bg-black relative z-10 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center items-center mb-8">
-            <Sparkles className="h-16 w-16 mx-auto text-white animate-spin" />
+            <Sparkles className="h-16 w-16 mx-auto text-white animate-spin-slow" />
           </div>
           <h2 className="text-4xl md:text-6xl font-bold mb-12 text-white">
             Our Mission
@@ -266,7 +265,7 @@ const Index = () => {
       </section>
 
       {/* Positions Section */}
-      <ParallaxSection className="py-32 bg-black border-t border-gray-800 relative z-10" speed={0.3}>
+      <section className="py-32 bg-black border-t border-gray-800 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
@@ -298,14 +297,17 @@ const Index = () => {
                     </span>
                   ))}
                 </div>
-                <Button variant="outline" className="w-full bg-black border-gray-600 text-white hover:bg-white hover:text-black">
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-black border-gray-600 text-white hover:bg-white hover:text-black transition-all duration-300"
+                >
                   Learn More
                 </Button>
               </div>
             ))}
           </div>
         </div>
-      </ParallaxSection>
+      </section>
 
       {/* Modals */}
       <RoleDetailModal
