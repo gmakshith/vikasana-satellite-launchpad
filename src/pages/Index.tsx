@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Rocket, Satellite, Earth, Sparkles } from "lucide-react";
+import { Rocket, Satellite, Earth, Sparkles, Star, Orbit, Zap, Moon, Sun } from "lucide-react";
 import RoleDetailModal from "@/components/RoleDetailModal";
 import RegistrationModal from "@/components/RegistrationModal";
 import ParallaxSection from "@/components/ParallaxSection";
@@ -140,23 +140,60 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative">
+        {/* Floating Space Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 animate-pulse">
+            <Star className="h-8 w-8 text-white opacity-70" />
+          </div>
+          <div className="absolute top-32 right-20 animate-bounce delay-100">
+            <Satellite className="h-10 w-10 text-gray-300" />
+          </div>
+          <div className="absolute bottom-40 left-20 animate-pulse delay-200">
+            <Moon className="h-12 w-12 text-gray-400" />
+          </div>
+          <div className="absolute top-40 right-40 animate-spin slow">
+            <Orbit className="h-16 w-16 text-white opacity-50" />
+          </div>
+          <div className="absolute bottom-60 right-10 animate-pulse delay-300">
+            <Zap className="h-6 w-6 text-white" />
+          </div>
+          <div className="absolute top-60 left-40 animate-bounce delay-400">
+            <Sun className="h-8 w-8 text-yellow-400 opacity-80" />
+          </div>
+        </div>
+
         <div className="text-center z-10 px-4">
           <div className="flex justify-center items-center mb-8">
             <img 
               src="/lovable-uploads/6925f3f5-f9d2-42ab-83f5-0a601c228f5e.png" 
               alt="Vikasana Logo" 
-              className="h-32 w-auto"
+              className="h-48 w-auto md:h-56 lg:h-64"
             />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             VIKASANA
           </h1>
-          <p className="text-2xl md:text-4xl mb-4 text-white">
+          <p className="text-2xl md:text-4xl mb-8 text-white">
             Student Satellite Team
           </p>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Join India's premier student satellite development program. Build the future of space technology with us.
-          </p>
+          <div className="max-w-4xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              Vikasana is the Student Wing of the Research and development Department of Presidency University, 
+              committed to nurturing a culture of creativity, problem-solving, and hands-on 
+              engineering among students. Founded with the vision to bridge the gap between 
+              classroom learning and real-world application, Vikasana provides a collaborative 
+              platform for students across disciplines to engage in cutting-edge projects, participate 
+              in national and international competitions, and host technical events of global 
+              significance.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed mt-4">
+              From building space rovers and satellite models to automating real-world systems 
+              through robotics and software, the club empowers students to innovate with purpose. 
+              Through mentorship, interdisciplinary teamwork, and exposure to industry challenges, 
+              Vikasana continues to contribute to the university's mission of fostering future-ready 
+              innovators and leaders.
+            </p>
+          </div>
           <div className="flex justify-center space-x-8 mb-12">
             <Rocket className="h-12 w-12 text-white animate-pulse" />
             <Satellite className="h-12 w-12 text-gray-300 animate-bounce" />
@@ -165,10 +202,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mission Section with proper spacing */}
-      <section className="py-32 bg-black relative z-10">
+      {/* Mission Section */}
+      <section className="py-32 bg-black relative z-10 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <Sparkles className="h-16 w-16 mx-auto mb-8 text-white animate-spin" />
+          <div className="flex justify-center items-center mb-8">
+            <Sparkles className="h-16 w-16 mx-auto text-white animate-spin" />
+          </div>
           <h2 className="text-4xl md:text-6xl font-bold mb-12 text-white">
             Our Mission
           </h2>
@@ -226,8 +265,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Positions Section with proper spacing */}
-      <section className="py-32 bg-black border-t border-gray-800 relative z-10">
+      {/* Positions Section */}
+      <ParallaxSection className="py-32 bg-black border-t border-gray-800 relative z-10" speed={0.3}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
@@ -242,7 +281,7 @@ const Index = () => {
             {positions.map((position) => (
               <div 
                 key={position.id}
-                className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-white hover:bg-gray-800 transition-all duration-300 cursor-pointer group"
+                className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-white hover:bg-gray-800 transition-all duration-300 cursor-pointer group transform hover:scale-105"
                 onClick={() => handlePositionSelect(position)}
               >
                 <div className="text-4xl mb-4">{position.icon}</div>
@@ -266,7 +305,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Modals */}
       <RoleDetailModal
