@@ -138,8 +138,8 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <SpaceBackground />
       
-      {/* Hero Section with Parallax */}
-      <ParallaxSection className="min-h-screen flex items-center justify-center relative">
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center relative">
         <div className="text-center z-10 px-4">
           <div className="flex justify-center items-center mb-8">
             <img 
@@ -163,52 +163,10 @@ const Index = () => {
             <Earth className="h-12 w-12 text-white animate-pulse" />
           </div>
         </div>
-      </ParallaxSection>
+      </section>
 
-      {/* Positions Section */}
-      <ParallaxSection className="py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-              Open Positions
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Choose your path in satellite development. Each role offers unique challenges and opportunities to shape the future of space technology.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {positions.map((position) => (
-              <div 
-                key={position.id}
-                className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-white hover:bg-gray-800 transition-all duration-300 cursor-pointer group"
-                onClick={() => handlePositionSelect(position)}
-              >
-                <div className="text-4xl mb-4">{position.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gray-200 transition-colors">
-                  {position.title}
-                </h3>
-                <p className="text-gray-300 mb-4 text-sm">
-                  {position.shortDescription}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {position.requirements.slice(0, 3).map((req, index) => (
-                    <span key={index} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded border border-gray-600">
-                      {req}
-                    </span>
-                  ))}
-                </div>
-                <Button variant="outline" className="w-full bg-black border-gray-600 text-white hover:bg-white hover:text-black">
-                  Learn More
-                </Button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </ParallaxSection>
-
-      {/* Mission Section */}
-      <ParallaxSection className="py-20 bg-black border-t border-gray-800">
+      {/* Mission Section with proper spacing */}
+      <section className="py-32 bg-black relative z-10">
         <div className="container mx-auto px-4 text-center">
           <Sparkles className="h-16 w-16 mx-auto mb-8 text-white animate-spin" />
           <h2 className="text-4xl md:text-6xl font-bold mb-12 text-white">
@@ -266,7 +224,49 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </ParallaxSection>
+      </section>
+
+      {/* Positions Section with proper spacing */}
+      <section className="py-32 bg-black border-t border-gray-800 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              Open Positions
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Choose your path in satellite development. Each role offers unique challenges and opportunities to shape the future of space technology.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {positions.map((position) => (
+              <div 
+                key={position.id}
+                className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-white hover:bg-gray-800 transition-all duration-300 cursor-pointer group"
+                onClick={() => handlePositionSelect(position)}
+              >
+                <div className="text-4xl mb-4">{position.icon}</div>
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gray-200 transition-colors">
+                  {position.title}
+                </h3>
+                <p className="text-gray-300 mb-4 text-sm">
+                  {position.shortDescription}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {position.requirements.slice(0, 3).map((req, index) => (
+                    <span key={index} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded border border-gray-600">
+                      {req}
+                    </span>
+                  ))}
+                </div>
+                <Button variant="outline" className="w-full bg-black border-gray-600 text-white hover:bg-white hover:text-black">
+                  Learn More
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Modals */}
       <RoleDetailModal
