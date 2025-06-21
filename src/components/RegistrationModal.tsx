@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
-import { Github, Rocket, Linkedin, Upload, X } from "lucide-react";
+import { Github, Rocket, Linkedin, Link, CheckCircle } from "lucide-react";
 
 interface Position {
   id: string;
@@ -32,8 +32,11 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
     tools: [] as string[],
     experience: "",
     motivation: "",
-    resume: null as File | null
+    resumeUrl: ""
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const availableTools = [
     "MATLAB", "Python", "C/C++", "JavaScript", "Java", "PCB Design", "CAD Software", 
@@ -42,10 +45,66 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
     "Machine Learning", "Data Analysis", "3D Printing", "Hardware Testing"
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose();
+    setIsSubmitting(true);
+
+    try {
+      const payload = {
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        rollNumber: formData.rollNumber,
+        yearOfStudy: formData.year,
+        branch: formData.branch,
+        linkedin: formData.linkedinUrl,
+        github: formData.githubUrl,
+        tools: formData.tools,
+        resumeUrl: formData.resumeUrl,
+        experience: formData.experience,
+        whyJoin: formData.motivation
+      };
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxKMtZwQm9N7juNCqc1VzRgM0Y5yuM9YlLd6mM8MUpQF2Zmyr_V11QA2YOYE7bDx3bF/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+      
+      if (result.result === 'success') {
+        setSubmitSuccess(true);
+        console.log("Form submitted successfully:", payload);
+        setTimeout(() => {
+          onClose();
+          setSubmitSuccess(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            rollNumber: "",
+            year: "",
+            branch: "",
+            linkedinUrl: "",
+            githubUrl: "",
+            tools: [],
+            experience: "",
+            motivation: "",
+            resumeUrl: ""
+          });
+        }, 2000);
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit application. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -61,16 +120,19 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
     }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file && file.type === 'application/pdf') {
-      setFormData(prev => ({ ...prev, resume: file }));
-    }
-  };
-
-  const removeFile = () => {
-    setFormData(prev => ({ ...prev, resume: null }));
-  };
+  if (submitSuccess) {
+    return (
+      <Dialog open={isOpen} onOpenChange={onClose}>
+        <DialogContent className="max-w-md bg-black border-white text-white text-center">
+          <div className="py-8">
+            <CheckCircle className="h-16 w-16 mx-auto mb-4 text-green-400" />
+            <h2 className="text-2xl font-bold mb-2 text-white">Application Submitted!</h2>
+            <p className="text-gray-300">Thank you for your interest in joining Vikasana. We'll review your application and get back to you soon.</p>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -224,42 +286,29 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
             </div>
           </div>
 
-          {/* Resume Upload */}
+          {/* Resume URL */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white border-b border-gray-600 pb-2">
               Resume
             </h3>
             <div className="space-y-2">
-              <Label className="text-gray-300">Upload Resume (PDF only) *</Label>
-              {!formData.resume ? (
-                <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center">
-                  <Upload className="h-8 w-8 mx-auto mb-2 text-gray-400" />
-                  <label className="cursor-pointer">
-                    <span className="text-white hover:text-gray-300">Click to upload your resume</span>
-                    <input
-                      type="file"
-                      accept=".pdf"
-                      onChange={handleFileChange}
-                      className="hidden"
-                      required
-                    />
-                  </label>
-                  <p className="text-sm text-gray-400 mt-1">PDF files only, max 5MB</p>
-                </div>
-              ) : (
-                <div className="flex items-center justify-between bg-gray-900 border border-gray-700 rounded-lg p-3">
-                  <span className="text-white">{formData.resume.name}</span>
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    onClick={removeFile}
-                    className="text-gray-400 hover:text-white"
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
-                </div>
-              )}
+              <Label className="text-gray-300 flex items-center gap-2">
+                <Link className="h-4 w-4" />
+                Resume URL *
+              </Label>
+              <Input
+                type="url"
+                placeholder="https://drive.google.com/file/d/your-resume-link"
+                value={formData.resumeUrl}
+                onChange={(e) => handleInputChange('resumeUrl', e.target.value)}
+                required
+                className="bg-gray-900 border-gray-700 text-white focus:border-white"
+              />
+              <p className="text-sm text-gray-400">
+                <strong>Important:</strong> Please ensure the URL you provide is publicly accessible. 
+                For Google Drive links, make sure to set sharing permissions to "Anyone with the link can view". 
+                We need to be able to access your resume to review your application.
+              </p>
             </div>
           </div>
 
@@ -297,14 +346,16 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
           <div className="flex gap-4 pt-6 border-t border-gray-700">
             <Button
               type="submit"
-              className="flex-1 bg-white text-black hover:bg-gray-200"
+              disabled={isSubmitting}
+              className="flex-1 bg-white text-black hover:bg-gray-200 disabled:opacity-50"
             >
-              Submit Application
+              {isSubmitting ? "Submitting..." : "Submit Application"}
             </Button>
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
+              disabled={isSubmitting}
               className="border-gray-600 text-gray-300 hover:bg-gray-900"
             >
               Cancel
