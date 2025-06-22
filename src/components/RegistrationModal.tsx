@@ -84,27 +84,21 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
 
       console.log("Submitting form data:", payload);
 
-      const formBody = new URLSearchParams();
-      for (const [key, value] of Object.entries(payload)) {
-        if (Array.isArray(value)) {
-          value.forEach(v => formBody.append(key, v));  // send array as repeated keys
-        } else {
-          formBody.append(key, value);
-        }
-      }
-
-      const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbzdMdWueDJ2oY5ZmGfoxP7mZHGUhIC6qKsI1-zspSg9P0I-qkVzXqWQCd_WDKM2tyye/exec',
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzdMdWueDJ2oY5ZmGfoxP7mZHGUhIC6qKsI1-zspSg9P0I-qkVzXqWQCd_WDKM2tyye/exec',
         {
           method: 'POST',
-          body: formBody
-        }  
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+           body: JSON.stringify(payload)
+        }
       );
 
       console.log("Form submitted successfully");
-      
+
       setSubmitSuccess(true);
-      
+
       toast({
         title: "Application Submitted!",
         description: "Thank you for your interest. We'll review your application and get back to you soon.",
