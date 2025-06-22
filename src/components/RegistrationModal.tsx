@@ -94,7 +94,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
       }
 
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbxKMtZwQm9N7juNCqc1VzRgM0Y5yuM9YlLd6mM8MUpQF2Zmyr_V11QA2YOYE7bDx3bF/exec',
+        'https://script.google.com/macros/s/AKfycbzdMdWueDJ2oY5ZmGfoxP7mZHGUhIC6qKsI1-zspSg9P0I-qkVzXqWQCd_WDKM2tyye/exec',
         {
           method: 'POST',
           body: formBody
