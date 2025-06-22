@@ -84,7 +84,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
 
       console.log("Submitting form data:", payload);
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzdMdWueDJ2oY5ZmGfoxP7mZHGUhIC6qKsI1-zspSg9P0I-qkVzXqWQCd_WDKM2tyye/exec',
+      const response = await fetch('https://script.google.com/macros/s/AKfycbymR-IvZW2AJAxJsfmt69emNKUbLrCd-8e3BQ67D5qy6Nc10Z_-tcreck2ZbdrqMQzW/exec',
         {
           method: 'POST',
           mode: 'no-cors',
