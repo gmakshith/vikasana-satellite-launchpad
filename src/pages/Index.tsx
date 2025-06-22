@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Rocket, Satellite, Earth, Sparkles, Star, Orbit, Zap, Moon, Sun, Mail, Calendar, Clock } from "lucide-react";
@@ -176,66 +175,98 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#0B0F1A] via-[#0d1421] to-[#0B0F1A] text-[#E0E0E0] overflow-x-hidden relative">
       <SpaceBackground />
       
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative bg-white">
-        {/* Space Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-            alt="Space Background" 
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/90"></div>
+      {/* Hero Section with Animated Earth */}
+      <section className="min-h-screen flex items-center justify-center relative">
+        {/* Animated Earth and Satellite */}
+        <div className="absolute inset-0 flex items-center justify-center z-0">
+          <div className="relative">
+            {/* Earth */}
+            <div className="w-96 h-96 rounded-full bg-gradient-to-br from-[#3A91FF] via-[#00F6FF] to-[#A070FF] animate-pulse shadow-2xl shadow-[#3A91FF]/30">
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-400 via-green-300 to-blue-600 opacity-80">
+                <div className="absolute inset-2 rounded-full bg-gradient-to-br from-blue-500 via-green-400 to-blue-700 animate-spin-slow">
+                  {/* Continents simulation */}
+                  <div className="absolute top-8 left-12 w-16 h-12 bg-green-600 rounded-lg opacity-70"></div>
+                  <div className="absolute bottom-16 right-8 w-20 h-16 bg-green-500 rounded-full opacity-60"></div>
+                  <div className="absolute top-20 right-20 w-12 h-8 bg-green-700 rounded-lg opacity-50"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Orbiting Satellite */}
+            <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
+              <div className="relative w-96 h-96">
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                  <div className="w-8 h-8 bg-gradient-to-r from-[#FF9F45] to-[#FFD700] rounded-sm shadow-lg shadow-[#FF9F45]/50 animate-pulse">
+                    <div className="absolute -left-2 top-1/2 w-6 h-1 bg-[#FFD700] transform -translate-y-1/2"></div>
+                    <div className="absolute -right-2 top-1/2 w-6 h-1 bg-[#FFD700] transform -translate-y-1/2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Orbital Path */}
+            <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#3A91FF]/30 animate-pulse" style={{ width: '400px', height: '400px', margin: '-2px' }}></div>
+          </div>
         </div>
 
-        <div className="text-center z-10 px-4">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+        {/* Hero Content */}
+        <div className="text-center z-10 px-4 relative">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#3A91FF] via-[#00F6FF] to-[#A070FF] bg-clip-text text-transparent animate-pulse">
             VIKASANA
           </h1>
-          <p className="text-2xl md:text-4xl mb-8 text-gray-800">
+          <p className="text-2xl md:text-4xl mb-8 text-[#00F6FF] font-light tracking-wide">
             Student Satellite Team
           </p>
           <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl text-[#E0E0E0] leading-relaxed opacity-90">
               Vikasana is the Student Wing of the Research and development Department of Presidency University, 
               committed to nurturing a culture of creativity, problem-solving, and hands-on 
-              engineering among students. Founded with the vision to bridge the gap between 
-              classroom learning and real-world application, Vikasana provides a collaborative 
-              platform for students across disciplines to engage in cutting-edge projects, participate 
-              in national and international competitions, and host technical events of global 
-              significance.
+              engineering among students.
             </p>
           </div>
-          <div className="flex justify-center space-x-8 mb-12">
-            <Rocket className="h-12 w-12 text-gray-800 animate-pulse" />
-            <Satellite className="h-12 w-12 text-gray-700 animate-bounce" />
-            <Earth className="h-12 w-12 text-gray-800 animate-pulse" />
+          
+          {/* Data Stream Animation */}
+          <div className="flex justify-center space-x-12 mb-12">
+            <div className="flex flex-col items-center">
+              <div className="w-2 h-16 bg-gradient-to-t from-transparent via-[#3A91FF] to-transparent animate-pulse mb-2"></div>
+              <span className="text-[#3A91FF] text-sm font-mono">POWER</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-2 h-20 bg-gradient-to-t from-transparent via-[#00F6FF] to-transparent animate-pulse mb-2" style={{ animationDelay: '0.5s' }}></div>
+              <span className="text-[#00F6FF] text-sm font-mono">SIGNAL</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-2 h-14 bg-gradient-to-t from-transparent via-[#A070FF] to-transparent animate-pulse mb-2" style={{ animationDelay: '1s' }}></div>
+              <span className="text-[#A070FF] text-sm font-mono">DATA</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-32 bg-gray-50 relative z-10 border-t border-gray-200">
+      <section className="py-32 bg-gradient-to-b from-transparent to-[#0d1421]/50 relative z-10 border-t border-[#3A91FF]/20">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center items-center mb-8">
-            <Sparkles className="h-16 w-16 mx-auto text-gray-800 animate-spin-slow" />
+            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF9F45] to-[#FFD700] animate-spin-slow flex items-center justify-center">
+              <Sparkles className="h-8 w-8 text-[#0B0F1A]" />
+            </div>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 text-gray-900">
+          <h2 className="text-4xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-[#3A91FF] to-[#00F6FF] bg-clip-text text-transparent">
             🚀 Student Satellite Mission Recruitment Drive
           </h2>
           <div className="max-w-6xl mx-auto space-y-8">
-            <p className="text-xl text-gray-700 leading-relaxed font-semibold">
+            <p className="text-xl text-[#E0E0E0] leading-relaxed font-semibold">
               We are forming an ambitious, high-performing student team with one clear goal:
-              <span className="block text-2xl font-bold text-gray-900 mt-2">Design, build, and launch a satellite.</span>
+              <span className="block text-2xl font-bold bg-gradient-to-r from-[#FF9F45] to-[#FFD700] bg-clip-text text-transparent mt-2">Design, build, and launch a satellite.</span>
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-[#E0E0E0]/80 leading-relaxed">
               This is a rare opportunity to experience a real spacecraft mission as an undergraduate — while being mentored by alumni with prior experience in professional space missions (CubeSats, ground stations, and more). Whether you're in 2nd year just beginning your space journey, or in 3rd/4th year looking to apply your skills, this is for students who want to push limits and learn by building.
             </p>
-            <div className="bg-gray-100 border border-gray-300 rounded-xl p-6 mx-auto max-w-2xl">
-              <p className="text-lg font-bold text-gray-800">
+            <div className="bg-gradient-to-r from-[#3A91FF]/10 to-[#A070FF]/10 border border-[#3A91FF]/30 rounded-xl p-6 mx-auto max-w-2xl backdrop-blur-sm">
+              <p className="text-lg font-bold bg-gradient-to-r from-[#FF9F45] to-[#FFD700] bg-clip-text text-transparent">
                 Disclaimer: No good grades? No issues!
               </p>
             </div>
@@ -244,13 +275,13 @@ const Index = () => {
       </section>
 
       {/* Positions Section */}
-      <section className="py-32 bg-white border-t border-gray-200 relative z-10">
+      <section className="py-32 bg-gradient-to-b from-[#0d1421]/50 to-transparent border-t border-[#A070FF]/20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#A070FF] to-[#00F6FF] bg-clip-text text-transparent">
               📢 OPEN POSITIONS
             </h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            <p className="text-xl text-[#E0E0E0]/90 max-w-2xl mx-auto">
               Choose your path in satellite development. Each role offers unique challenges and opportunities to shape the future of space technology.
             </p>
           </div>
@@ -259,26 +290,29 @@ const Index = () => {
             {positions.map((position) => (
               <div 
                 key={position.id}
-                className="bg-gray-50 border border-gray-300 rounded-xl p-6 hover:border-gray-900 hover:bg-gray-100 transition-all duration-300 cursor-pointer group transform hover:scale-105 hover:shadow-lg"
+                className="bg-gradient-to-br from-[#0B0F1A]/80 to-[#0d1421]/60 border border-[#3A91FF]/30 rounded-xl p-6 hover:border-[#FF9F45] hover:shadow-2xl hover:shadow-[#FF9F45]/20 transition-all duration-300 cursor-pointer group transform hover:scale-105 backdrop-blur-sm relative overflow-hidden"
                 onClick={() => handlePositionSelect(position)}
               >
-                <div className="text-4xl mb-4">{position.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-gray-800 transition-colors">
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#3A91FF]/5 via-transparent to-[#A070FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="text-4xl mb-4 relative z-10">{position.icon}</div>
+                <h3 className="text-xl font-bold mb-3 text-[#E0E0E0] group-hover:text-[#FF9F45] transition-colors relative z-10">
                   {position.title}
                 </h3>
-                <p className="text-gray-700 mb-4 text-sm">
+                <p className="text-[#E0E0E0]/70 mb-4 text-sm relative z-10">
                   {position.shortDescription}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 relative z-10">
                   {position.requirements.slice(0, 3).map((req, index) => (
-                    <span key={index} className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded border border-gray-300">
+                    <span key={index} className="px-2 py-1 bg-[#3A91FF]/20 text-[#00F6FF] text-xs rounded border border-[#3A91FF]/40 backdrop-blur-sm">
                       {req}
                     </span>
                   ))}
                 </div>
                 <Button 
                   variant="outline" 
-                  className="w-full bg-white border-gray-400 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                  className="w-full bg-transparent border-[#3A91FF] text-[#3A91FF] hover:bg-[#FF9F45] hover:text-[#0B0F1A] hover:border-[#FF9F45] transition-all duration-300 relative z-10"
                 >
                   Learn More
                 </Button>
@@ -289,72 +323,74 @@ const Index = () => {
       </section>
 
       {/* Requirements & Benefits Section */}
-      <section className="py-32 bg-gray-50 border-t border-gray-200 relative z-10">
+      <section className="py-32 bg-gradient-to-b from-transparent to-[#0d1421]/30 border-t border-[#00F6FF]/20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* General Requirements */}
-            <div className="bg-white border border-gray-300 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-                <Star className="h-6 w-6" />
+            <div className="bg-gradient-to-br from-[#0B0F1A]/90 to-[#0d1421]/70 border border-[#3A91FF]/30 rounded-xl p-8 backdrop-blur-sm relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#3A91FF]/5 via-transparent to-[#A070FF]/5"></div>
+              <h3 className="text-2xl font-bold mb-6 text-[#E0E0E0] flex items-center gap-2 relative z-10">
+                <Star className="h-6 w-6 text-[#FFD700]" />
                 🌟 GENERAL REQUIREMENTS
               </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+              <ul className="space-y-3 relative z-10">
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#3A91FF] rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
                   Solid excellent communication and organizing abilities
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#00F6FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
                   Willingness to take responsibility and strive for completion despite severe academic and technical limits
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#A070FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                   Space, satellites and learning new things must be of interest to you
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#FF9F45] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
                   Passionate about space tech and system design
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#FFD700] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.8s' }}></div>
                   Excellent technical writing skills, initiative, and a long-term thinking mindset
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#3A91FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '1s' }}></div>
                   Self-driven, open to learning, and capable of taking charge of research assignments
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#00F6FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '1.2s' }}></div>
                   Capable of taking charge and cooperating effectively in a group
                 </li>
               </ul>
             </div>
 
             {/* Perks & Benefits */}
-            <div className="bg-white border border-gray-300 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-                <Sparkles className="h-6 w-6" />
+            <div className="bg-gradient-to-br from-[#0B0F1A]/90 to-[#0d1421]/70 border border-[#A070FF]/30 rounded-xl p-8 backdrop-blur-sm relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#A070FF]/5 via-transparent to-[#FF9F45]/5"></div>
+              <h3 className="text-2xl font-bold mb-6 text-[#E0E0E0] flex items-center gap-2 relative z-10">
+                <Sparkles className="h-6 w-6 text-[#FF9F45]" />
                 🎁 PERKS & BENEFITS
               </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+              <ul className="space-y-3 relative z-10">
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#A070FF] rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
                   Hands-on experience with industry standard software, hardware, and tools
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#FF9F45] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
                   Personal mentorship from experienced seniors, industry professionals, and faculty
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#FFD700] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                   Official certification and recognition from the university
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#3A91FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
                   Career acceleration through real-world, resume-boosting project work
                 </li>
-                <li className="flex items-start gap-2 text-gray-700">
-                  <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                  <div className="w-2 h-2 bg-[#00F6FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.8s' }}></div>
                   Collaborative, fun, and high-energy team culture
                 </li>
               </ul>
@@ -364,61 +400,61 @@ const Index = () => {
       </section>
 
       {/* Application Section */}
-      <section className="py-32 bg-white border-t border-gray-200 relative z-10">
+      <section className="py-32 bg-gradient-to-b from-[#0d1421]/30 to-transparent border-t border-[#FF9F45]/20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-[#FF9F45] to-[#FFD700] bg-clip-text text-transparent">
               📄 HOW TO APPLY
             </h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg text-[#E0E0E0]/90 mb-8 leading-relaxed">
               You do not need to meet 100% of the preferred qualifications to be considered. We encourage anyone who meets the basic qualifications and is interested in the role to apply – we are looking for enthusiastic, dedicated people to join our team, and want the opportunity to talk to you!
             </p>
-            <p className="text-lg text-gray-700 mb-12 leading-relaxed">
+            <p className="text-lg text-[#E0E0E0]/90 mb-12 leading-relaxed">
               If you don't see any open positions, please submit your resume & SOP. We will get back to you if any suitable openings match your profile.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {/* Application Requirements */}
-              <div className="bg-gray-50 border border-gray-300 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-gray-900">📌 Application Requirements:</h3>
+              <div className="bg-gradient-to-br from-[#0B0F1A]/80 to-[#0d1421]/60 border border-[#3A91FF]/30 rounded-xl p-6 backdrop-blur-sm">
+                <h3 className="text-xl font-bold mb-4 text-[#3A91FF]">📌 Application Requirements:</h3>
                 <ul className="space-y-2 text-left">
-                  <li className="flex items-start gap-2 text-gray-700">
-                    <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                  <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                    <div className="w-2 h-2 bg-[#3A91FF] rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
                     Your updated resume
                   </li>
-                  <li className="flex items-start gap-2 text-gray-700">
-                    <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                  <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                    <div className="w-2 h-2 bg-[#00F6FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.3s' }}></div>
                     A single-page Statement of Purpose (SOP) explaining why you want to work with us and how you can contribute to the student-built satellite project
                   </li>
-                  <li className="flex items-start gap-2 text-gray-700">
-                    <div className="w-2 h-2 bg-gray-800 rounded-full mt-2 flex-shrink-0"></div>
+                  <li className="flex items-start gap-2 text-[#E0E0E0]/90">
+                    <div className="w-2 h-2 bg-[#A070FF] rounded-full mt-2 flex-shrink-0 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
                     Make sure the SOP reflects your interest, relevant skills, and motivation to be part of this mission.
                   </li>
                 </ul>
               </div>
 
               {/* Important Dates */}
-              <div className="bg-gray-50 border border-gray-300 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-4 text-gray-900">📅 Important Dates:</h3>
+              <div className="bg-gradient-to-br from-[#0B0F1A]/80 to-[#0d1421]/60 border border-[#A070FF]/30 rounded-xl p-6 backdrop-blur-sm">
+                <h3 className="text-xl font-bold mb-4 text-[#A070FF]">📅 Important Dates:</h3>
                 <div className="space-y-3 text-left">
-                  <div className="flex items-center gap-2 text-gray-700">
-                    <Calendar className="h-4 w-4" />
-                    <span><strong>🗓️ Last Date of Application:</strong> 19-06-2025</span>
+                  <div className="flex items-center gap-2 text-[#E0E0E0]/90">
+                    <Calendar className="h-4 w-4 text-[#FF9F45]" />
+                    <span><strong className="text-[#FF9F45]">🗓️ Last Date of Application:</strong> 19-06-2025</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-700">
-                    <Clock className="h-4 w-4" />
-                    <span><strong>📅 Interview Dates:</strong> 21-06-2025 to 22-06-2025 (Offline/Online)</span>
+                  <div className="flex items-center gap-2 text-[#E0E0E0]/90">
+                    <Clock className="h-4 w-4 text-[#FFD700]" />
+                    <span><strong className="text-[#FFD700]">📅 Interview Dates:</strong> 21-06-2025 to 22-06-2025 (Offline/Online)</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Info */}
-            <div className="bg-gray-100 border border-gray-300 rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">📧 For any queries, please reach out to:</h3>
+            <div className="bg-gradient-to-r from-[#3A91FF]/10 via-[#A070FF]/10 to-[#FF9F45]/10 border border-[#FFD700]/30 rounded-xl p-6 backdrop-blur-sm">
+              <h3 className="text-xl font-bold mb-4 text-[#FFD700]">📧 For any queries, please reach out to:</h3>
               <div className="flex justify-center items-center gap-2">
-                <Mail className="h-5 w-5 text-gray-700" />
-                <a href="mailto:v4vaayuvega@gmail.com" className="text-lg text-gray-800 hover:text-gray-900 font-semibold">
+                <Mail className="h-5 w-5 text-[#00F6FF]" />
+                <a href="mailto:v4vaayuvega@gmail.com" className="text-lg text-[#00F6FF] hover:text-[#FF9F45] font-semibold transition-colors">
                   v4vaayuvega@gmail.com
                 </a>
               </div>
