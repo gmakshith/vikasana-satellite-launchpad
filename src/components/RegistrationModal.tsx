@@ -1,9 +1,11 @@
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 import { Github, Rocket, Linkedin, Link, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -28,6 +30,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
     rollNumber: "",
     year: "",
     branch: "",
+    selectedRole: "",
     linkedinUrl: "",
     githubUrl: "",
     tools: [] as string[],
@@ -38,6 +41,17 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const availableRoles = [
+    "Electrical Power System",
+    "Onboard Computer", 
+    "Systems Engineer",
+    "Payload Engineer",
+    "Mechanical Engineer",
+    "Flight Software",
+    "Communication System",
+    "Project Manager"
+  ];
 
   const availableTools = [
     "MATLAB", "Python", "C/C++", "JavaScript", "Java", "PCB Design", 
@@ -59,6 +73,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
         rollNumber: formData.rollNumber,
         yearOfStudy: formData.year,
         branch: formData.branch,
+        selectedRole: formData.selectedRole,
         linkedin: formData.linkedinUrl,
         github: formData.githubUrl,
         tools: formData.tools,
@@ -71,14 +86,13 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
 
       const response = await fetch('https://script.google.com/macros/s/AKfycbxKMtZwQm9N7juNCqc1VzRgM0Y5yuM9YlLd6mM8MUpQF2Zmyr_V11QA2YOYE7bDx3bF/exec', {
         method: 'POST',
-        mode: 'no-cors', // This bypasses CORS restrictions
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload)
       });
 
-      // With no-cors mode, we can't read the response, so we assume success
       console.log("Form submitted successfully");
       
       setSubmitSuccess(true);
@@ -98,6 +112,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
           rollNumber: "",
           year: "",
           branch: "",
+          selectedRole: "",
           linkedinUrl: "",
           githubUrl: "",
           tools: [],
@@ -153,7 +168,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-white flex items-center gap-2">
             <Rocket className="h-6 w-6" />
-            Apply for {position?.title}
+            Apply for Satellite Team Position
           </DialogTitle>
         </DialogHeader>
 
@@ -239,6 +254,28 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
                   className="bg-gray-900 border-gray-700 text-white focus:border-white"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Role Selection */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white border-b border-gray-600 pb-2">
+              Role Selection
+            </h3>
+            <div>
+              <Label htmlFor="selectedRole" className="text-gray-300">Select the role you are applying for *</Label>
+              <Select value={formData.selectedRole} onValueChange={(value) => handleInputChange('selectedRole', value)}>
+                <SelectTrigger className="bg-gray-900 border-gray-700 text-white focus:border-white">
+                  <SelectValue placeholder="Choose a role" />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-900 border-gray-700">
+                  {availableRoles.map((role) => (
+                    <SelectItem key={role} value={role} className="text-white hover:bg-gray-800">
+                      {role}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
