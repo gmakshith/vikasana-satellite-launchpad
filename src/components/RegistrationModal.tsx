@@ -73,7 +73,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
         rollNumber: formData.rollNumber,
         yearOfStudy: formData.year,
         branch: formData.branch,
-        role: formData.selectedRole,
+        selectedRole: formData.selectedRole,
         linkedin: formData.linkedinUrl,
         github: formData.githubUrl,
         tools: formData.tools,
@@ -84,21 +84,19 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
 
       console.log("Submitting form data:", payload);
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbymR-IvZW2AJAxJsfmt69emNKUbLrCd-8e3BQ67D5qy6Nc10Z_-tcreck2ZbdrqMQzW/exec',
-        {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-           body: JSON.stringify(payload)
-        }
-      );
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyuu2u1y0VxE8kYRD0FKfy4f_4vj9SSYA5zcoSXLx0So5bNxlta3tq38wVmz_ZGQvqj/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
 
       console.log("Form submitted successfully");
-
+      
       setSubmitSuccess(true);
-
+      
       toast({
         title: "Application Submitted!",
         description: "Thank you for your interest. We'll review your application and get back to you soon.",
