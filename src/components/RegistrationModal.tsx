@@ -73,7 +73,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
         rollNumber: formData.rollNumber,
         yearOfStudy: formData.year,
         branch: formData.branch,
-        selectedRole: formData.selectedRole,
+        role: formData.selectedRole,
         linkedin: formData.linkedinUrl,
         github: formData.githubUrl,
         tools: formData.tools,
@@ -84,14 +84,22 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
 
       console.log("Submitting form data:", payload);
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxKMtZwQm9N7juNCqc1VzRgM0Y5yuM9YlLd6mM8MUpQF2Zmyr_V11QA2YOYE7bDx3bF/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload)
-      });
+      const formBody = new URLSearchParams();
+      for (const [key, value] of Object.entries(payload)) {
+        if (Array.isArray(value)) {
+          value.forEach(v => formBody.append(key, v));  // send array as repeated keys
+        } else {
+          formBody.append(key, value);
+        }
+      }
+
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbxKMtZwQm9N7juNCqc1VzRgM0Y5yuM9YlLd6mM8MUpQF2Zmyr_V11QA2YOYE7bDx3bF/exec',
+        {
+          method: 'POST',
+          body: formBody
+        }  
+      );
 
       console.log("Form submitted successfully");
       
