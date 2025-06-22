@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Rocket, Satellite, Earth, Sparkles, Star, Orbit, Zap, Moon, Sun, Mail, Calendar, Clock } from "lucide-react";
@@ -179,101 +178,118 @@ const Index = () => {
     <div className="min-h-screen bg-[#0B0F1A] text-[#E0E0E0] overflow-x-hidden relative font-mono">
       <SpaceBackground />
       
-      {/* Hero Section - Earth and Satellite Animation */}
-      <section className="min-h-screen flex flex-col justify-center items-center relative">
-        {/* 3D Earth and Satellite Container */}
-        <div className="absolute inset-0 flex items-center justify-center z-0">
+      {/* Hero Section - Enhanced 3D Earth and Satellite */}
+      <section className="min-h-screen flex flex-col justify-center items-center relative px-4">
+        {/* 3D Earth and Satellite Container - Enhanced */}
+        <div className="flex items-center justify-center mb-16 relative">
           <div className="relative">
-            {/* Realistic Earth */}
-            <div className="w-80 h-80 md:w-96 md:h-96 rounded-full relative overflow-hidden shadow-2xl shadow-[#1C78C0]/50">
-              {/* Earth Base */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#4A90E2] via-[#357ABD] to-[#1E5F99]">
-                {/* Continents */}
-                <div className="absolute top-12 left-8 w-20 h-16 bg-[#2D5A27] rounded-lg opacity-80 transform rotate-12"></div>
-                <div className="absolute bottom-16 right-12 w-24 h-20 bg-[#3A6B35] rounded-full opacity-70 transform -rotate-6"></div>
-                <div className="absolute top-20 right-16 w-16 h-12 bg-[#2D5A27] rounded-lg opacity-75 transform rotate-45"></div>
-                <div className="absolute bottom-20 left-16 w-12 h-18 bg-[#3A6B35] rounded-lg opacity-65"></div>
+            {/* Enhanced Realistic Earth */}
+            <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full relative overflow-hidden shadow-2xl shadow-[#1C78C0]/30">
+              {/* Earth Base with Enhanced Gradients */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#4A90E2] via-[#357ABD] to-[#1E5F99] relative">
+                {/* Enhanced Continents with Better Detail */}
+                <div className="absolute top-8 left-6 w-16 h-12 bg-gradient-to-br from-[#2D5A27] to-[#1A3F1A] rounded-lg opacity-85 transform rotate-12 shadow-lg"></div>
+                <div className="absolute bottom-12 right-8 w-20 h-16 bg-gradient-to-br from-[#3A6B35] to-[#2D5A27] rounded-full opacity-75 transform -rotate-6 shadow-lg"></div>
+                <div className="absolute top-16 right-12 w-12 h-8 bg-gradient-to-br from-[#2D5A27] to-[#1A3F1A] rounded-lg opacity-80 transform rotate-45 shadow-md"></div>
+                <div className="absolute bottom-16 left-12 w-8 h-12 bg-gradient-to-br from-[#3A6B35] to-[#2D5A27] rounded-lg opacity-70 shadow-md"></div>
+                <div className="absolute top-1/3 left-1/4 w-10 h-6 bg-gradient-to-br from-[#2D5A27] to-[#1A3F1A] rounded-lg opacity-65 transform -rotate-12"></div>
                 
-                {/* Cloud Layer */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-white/10 animate-pulse"></div>
+                {/* Enhanced Cloud Layer with Animation */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/25 via-white/5 to-white/15 animate-pulse opacity-70"></div>
+                <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-pulse" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
                 
-                {/* Atmosphere Glow */}
-                <div className="absolute inset-0 rounded-full shadow-[0_0_60px_#00E3FF,inset_0_0_60px_rgba(28,120,192,0.3)]"></div>
+                {/* Atmosphere Glow - Enhanced */}
+                <div className="absolute inset-0 rounded-full shadow-[0_0_80px_#00E3FF,inset_0_0_80px_rgba(28,120,192,0.4)]"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-radial from-transparent via-transparent to-[#00E3FF]/10"></div>
               </div>
               
-              {/* Subtle Rotation Animation */}
-              <div className="absolute inset-0 rounded-full animate-spin" style={{ animationDuration: '60s' }}>
-                <div className="absolute top-8 left-12 w-3 h-3 bg-white/40 rounded-full"></div>
-                <div className="absolute bottom-12 right-8 w-2 h-2 bg-white/30 rounded-full"></div>
+              {/* Day/Night Terminator Line */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-black/20 to-transparent opacity-60 transform rotate-45"></div>
+              
+              {/* Subtle Earth Rotation */}
+              <div className="absolute inset-0 rounded-full animate-spin opacity-40" style={{ animationDuration: '120s' }}>
+                <div className="absolute top-6 left-8 w-2 h-2 bg-white/60 rounded-full"></div>
+                <div className="absolute bottom-8 right-6 w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+                <div className="absolute top-1/2 left-4 w-1 h-1 bg-white/50 rounded-full"></div>
               </div>
             </div>
             
-            {/* Satellite Orbit Path */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-[#00E3FF]/40 animate-pulse" 
-                 style={{ width: '450px', height: '450px', margin: '-37.5px' }}></div>
+            {/* Enhanced Orbital Path with Glow */}
+            <div className="absolute inset-0 rounded-full border border-dashed border-[#00E3FF]/50 animate-pulse shadow-[0_0_20px_#00E3FF]/30" 
+                 style={{ width: '550px', height: '550px', margin: '-50px' }}></div>
+            <div className="absolute inset-0 rounded-full border border-dotted border-[#9A6BFF]/30 animate-pulse" 
+                 style={{ width: '580px', height: '580px', margin: '-65px', animationDelay: '1s' }}></div>
             
-            {/* Orbiting Satellite */}
+            {/* Enhanced Orbiting Satellite with Particle Trail */}
             <div className="absolute inset-0 animate-spin" style={{ 
-              animationDuration: '30s',
-              width: '450px', 
-              height: '450px', 
-              margin: '-37.5px' 
+              animationDuration: '25s',
+              width: '550px', 
+              height: '550px', 
+              margin: '-50px' 
             }}>
               <div className="relative w-full h-full">
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                  {/* Realistic Satellite */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                  {/* Enhanced Realistic Satellite */}
                   <div className="relative">
-                    {/* Main Body */}
-                    <div className="w-6 h-8 bg-gradient-to-b from-[#C0C0C0] to-[#808080] rounded-sm shadow-lg">
-                      {/* Solar Panels */}
-                      <div className="absolute -left-4 top-2 w-8 h-1 bg-[#1C78C0] opacity-80"></div>
-                      <div className="absolute -right-4 top-2 w-8 h-1 bg-[#1C78C0] opacity-80"></div>
-                      {/* Antenna */}
-                      <div className="absolute top-0 left-1/2 w-0.5 h-3 bg-[#FFD700] transform -translate-x-1/2 -translate-y-3"></div>
+                    {/* Satellite Body - Enhanced */}
+                    <div className="w-8 h-10 bg-gradient-to-b from-[#E0E0E0] via-[#C0C0C0] to-[#808080] rounded-sm shadow-2xl border border-[#A0A0A0]/50">
+                      {/* Solar Panels - Enhanced */}
+                      <div className="absolute -left-6 top-3 w-12 h-1.5 bg-gradient-to-r from-[#1C78C0] to-[#00E3FF] opacity-90 shadow-lg shadow-[#1C78C0]/50"></div>
+                      <div className="absolute -right-6 top-3 w-12 h-1.5 bg-gradient-to-r from-[#00E3FF] to-[#1C78C0] opacity-90 shadow-lg shadow-[#1C78C0]/50"></div>
+                      {/* Communication Array */}
+                      <div className="absolute top-0 left-1/2 w-1 h-4 bg-gradient-to-t from-[#FFD700] to-[#FF8C42] transform -translate-x-1/2 -translate-y-4 shadow-md"></div>
+                      {/* Status Lights */}
+                      <div className="absolute top-1 left-1 w-1 h-1 bg-[#00E3FF] rounded-full animate-pulse"></div>
+                      <div className="absolute top-1 right-1 w-1 h-1 bg-[#FF8C42] rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                     </div>
-                    {/* Satellite Glow */}
-                    <div className="absolute inset-0 rounded-sm shadow-[0_0_20px_#FF8C42] opacity-60"></div>
+                    
+                    {/* Satellite Glow and Particle Trail */}
+                    <div className="absolute inset-0 rounded-sm shadow-[0_0_30px_#FF8C42] opacity-70 animate-pulse"></div>
+                    
+                    {/* Particle Trail Effect */}
+                    <div className="absolute top-1/2 -left-8 w-6 h-0.5 bg-gradient-to-l from-[#00E3FF]/60 to-transparent opacity-80"></div>
+                    <div className="absolute top-1/2 -left-12 w-4 h-0.5 bg-gradient-to-l from-[#9A6BFF]/40 to-transparent opacity-60" style={{ animationDelay: '0.2s' }}></div>
                   </div>
                 </div>
               </div>
             </div>
+            
+            {/* Data Stream Effects */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-[#00E3FF] rounded-full animate-ping"></div>
+              <div className="absolute bottom-1/3 right-1/3 w-1 h-1 bg-[#FF8C42] rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-[#9A6BFF] rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+            </div>
           </div>
         </div>
 
-        {/* Hero Content - Positioned below the animation */}
-        <div className="text-center z-10 px-4 relative mt-[600px] md:mt-[650px]">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#1C78C0] via-[#00E3FF] to-[#9A6BFF] bg-clip-text text-transparent">
+        {/* Hero Content - Positioned with Clear Separation */}
+        <div className="text-center px-4 relative z-10 max-w-6xl mx-auto">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-[#1C78C0] via-[#00E3FF] to-[#9A6BFF] bg-clip-text text-transparent">
             VIKASANA
           </h1>
-          <p className="text-xl md:text-3xl mb-8 text-[#00E3FF] font-light tracking-wide">
+          <p className="text-lg md:text-2xl lg:text-3xl mb-12 text-[#00E3FF] font-light tracking-wide">
             Student Satellite Team
           </p>
-          <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-lg md:text-xl text-[#E0E0E0] leading-relaxed opacity-90">
-              Vikasana is the Student Wing of the Research and development Department of Presidency University, 
-              committed to nurturing a culture of creativity, problem-solving, and hands-on 
-              engineering among students.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-32 relative z-10 border-t border-[#1C78C0]/30">
+      {/* Mission Section - Updated Content */}
+      <section className="py-24 md:py-32 relative z-10 border-t border-[#1C78C0]/30">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-[#1C78C0] to-[#00E3FF] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-12 bg-gradient-to-r from-[#1C78C0] to-[#00E3FF] bg-clip-text text-transparent">
             🚀 Student Satellite Mission Recruitment Drive
           </h2>
           <div className="max-w-6xl mx-auto space-y-8">
-            <p className="text-xl text-[#E0E0E0] leading-relaxed font-semibold">
+            <p className="text-lg md:text-xl text-[#E0E0E0] leading-relaxed font-semibold">
               We are forming an ambitious, high-performing student team with one clear goal:
-              <span className="block text-2xl font-bold bg-gradient-to-r from-[#FF8C42] to-[#FFD700] bg-clip-text text-transparent mt-2">Design, build, and launch a satellite.</span>
+              <span className="block text-xl md:text-2xl font-bold bg-gradient-to-r from-[#FF8C42] to-[#FFD700] bg-clip-text text-transparent mt-2">Design, build, and launch a satellite.</span>
             </p>
-            <p className="text-lg text-[#E0E0E0]/80 leading-relaxed">
+            <p className="text-base md:text-lg text-[#E0E0E0]/80 leading-relaxed">
               This is a rare opportunity to experience a real spacecraft mission as an undergraduate — while being mentored by alumni with prior experience in professional space missions (CubeSats, ground stations, and more). Whether you're in 2nd year just beginning your space journey, or in 3rd/4th year looking to apply your skills, this is for students who want to push limits and learn by building.
             </p>
             <div className="bg-gradient-to-r from-[#1C78C0]/10 to-[#9A6BFF]/10 border border-[#1C78C0]/30 rounded-xl p-6 mx-auto max-w-2xl backdrop-blur-sm">
-              <p className="text-lg font-bold bg-gradient-to-r from-[#FF8C42] to-[#FFD700] bg-clip-text text-transparent">
+              <p className="text-base md:text-lg font-bold bg-gradient-to-r from-[#FF8C42] to-[#FFD700] bg-clip-text text-transparent">
                 Disclaimer: No good grades? No issues!
               </p>
             </div>
@@ -405,21 +421,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Application Section */}
-      <section className="py-32 border-t border-[#FF8C42]/20 relative z-10">
+      {/* Application Section - Updated Text */}
+      <section className="py-24 md:py-32 border-t border-[#FF8C42]/20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-[#FF8C42] to-[#FFD700] bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-[#FF8C42] to-[#FFD700] bg-clip-text text-transparent">
               📄 HOW TO APPLY
             </h2>
             
-            {/* Updated Application Text */}
-            <div className="bg-gradient-to-r from-[#1C78C0]/10 via-[#9A6BFF]/10 to-[#FF8C42]/10 border border-[#FFD700]/30 rounded-xl p-8 backdrop-blur-sm mb-12">
-              <p className="text-lg text-[#E0E0E0]/90 mb-6 leading-relaxed">
-                <strong className="text-[#00E3FF]">We welcome enthusiastic candidates!</strong> You don't need to meet 100% of the preferred qualifications to be considered. We're looking for dedicated individuals who are passionate about space technology and eager to learn.
+            {/* Updated Application Text - Concise Version */}
+            <div className="bg-gradient-to-r from-[#1C78C0]/10 via-[#9A6BFF]/10 to-[#FF8C42]/10 border border-[#FFD700]/30 rounded-xl p-6 md:p-8 backdrop-blur-sm mb-12">
+              <p className="text-base md:text-lg text-[#E0E0E0]/90 mb-4 leading-relaxed">
+                <strong className="text-[#00E3FF]">We welcome enthusiastic candidates!</strong> You don't need 100% qualification match to apply.
               </p>
-              <p className="text-lg text-[#E0E0E0]/90 leading-relaxed">
-                <strong className="text-[#FFD700]">Don't see a perfect match?</strong> Email your resume and Statement of Purpose to the contact below. We'll reach out if suitable opportunities arise that align with your profile.
+              <p className="text-base md:text-lg text-[#E0E0E0]/90 leading-relaxed">
+                <strong className="text-[#FFD700]">Don't see a perfect match?</strong> Email your resume and Statement of Purpose below. We'll reach out if suitable opportunities arise.
               </p>
             </div>
             
@@ -461,10 +477,10 @@ const Index = () => {
 
             {/* Contact Info */}
             <div className="bg-gradient-to-r from-[#1C78C0]/10 via-[#9A6BFF]/10 to-[#FF8C42]/10 border border-[#FFD700]/30 rounded-xl p-6 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4 text-[#FFD700]">📧 For any queries, please reach out to:</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-[#FFD700]">📧 For any queries, please reach out to:</h3>
               <div className="flex justify-center items-center gap-2">
                 <Mail className="h-5 w-5 text-[#00E3FF]" />
-                <a href="mailto:v4vaayuvega@gmail.com" className="text-lg text-[#00E3FF] hover:text-[#FF8C42] font-semibold transition-colors">
+                <a href="mailto:v4vaayuvega@gmail.com" className="text-base md:text-lg text-[#00E3FF] hover:text-[#FF8C42] font-semibold transition-colors">
                   v4vaayuvega@gmail.com
                 </a>
               </div>
