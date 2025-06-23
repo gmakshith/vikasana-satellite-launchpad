@@ -239,18 +239,6 @@ const SpaceBackground = () => {
         ctx.setLineDash([]);
       }
 
-      // Add subtle aurora-like effects
-      const time = Date.now() * 0.001;
-      ctx.strokeStyle = `rgba(0, 227, 255, ${0.1 + Math.sin(time) * 0.05})`;
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      for (let x = 0; x < canvas.width; x += 20) {
-        const y = canvas.height * 0.8 + Math.sin(x * 0.01 + time) * 50;
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-
       requestAnimationFrame(animate);
     };
 

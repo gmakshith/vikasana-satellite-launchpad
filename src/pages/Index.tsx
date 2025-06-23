@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Rocket, Satellite, Earth, Sparkles, Star, Orbit, Zap, Moon, Sun, Mail, Calendar, Clock } from "lucide-react";
+import { Satellite, Sparkles, Star, Mail, Calendar, Clock } from "lucide-react";
 import RoleDetailModal from "@/components/RoleDetailModal";
 import RegistrationModal from "@/components/RegistrationModal";
-import ParallaxSection from "@/components/ParallaxSection";
 import SpaceBackground from "@/components/SpaceBackground";
 
 const positions = [
