@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Satellite, Sparkles, Star, Mail, Calendar, Clock } from "lucide-react";
@@ -178,92 +177,98 @@ const Index = () => {
     <div className="min-h-screen bg-[#0B0F1A] text-[#E0E0E0] overflow-x-hidden relative font-mono">
       <SpaceBackground />
       
-      {/* Hero Section - Enhanced 3D Earth and Satellite */}
+      {/* Hero Section - Professional Earth and Satellite */}
       <section className="min-h-screen flex flex-col justify-center items-center relative px-4">
-        {/* 3D Earth and Satellite Container - Enhanced */}
-        <div className="flex items-center justify-center mb-16 relative">
+        {/* Professional 3D Earth and Satellite Container */}
+        <div className="flex items-center justify-center mb-20 relative">
           <div className="relative">
-            {/* Enhanced Realistic Earth */}
-            <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full relative overflow-hidden shadow-2xl shadow-[#1C78C0]/30">
-              {/* Earth Base with Enhanced Gradients */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#4A90E2] via-[#357ABD] to-[#1E5F99] relative">
-                {/* Enhanced Continents with Better Detail */}
-                <div className="absolute top-8 left-6 w-16 h-12 bg-gradient-to-br from-[#2D5A27] to-[#1A3F1A] rounded-lg opacity-85 transform rotate-12 shadow-lg"></div>
-                <div className="absolute bottom-12 right-8 w-20 h-16 bg-gradient-to-br from-[#3A6B35] to-[#2D5A27] rounded-full opacity-75 transform -rotate-6 shadow-lg"></div>
-                <div className="absolute top-16 right-12 w-12 h-8 bg-gradient-to-br from-[#2D5A27] to-[#1A3F1A] rounded-lg opacity-80 transform rotate-45 shadow-md"></div>
-                <div className="absolute bottom-16 left-12 w-8 h-12 bg-gradient-to-br from-[#3A6B35] to-[#2D5A27] rounded-lg opacity-70 shadow-md"></div>
-                <div className="absolute top-1/3 left-1/4 w-10 h-6 bg-gradient-to-br from-[#2D5A27] to-[#1A3F1A] rounded-lg opacity-65 transform -rotate-12"></div>
+            {/* Realistic Earth */}
+            <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-full relative overflow-hidden shadow-2xl">
+              {/* Earth Base with Realistic Gradients */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#4A90E2] via-[#2E5F8A] to-[#1A4A73] relative">
+                {/* Realistic Continents */}
+                <div className="absolute top-12 left-8 w-20 h-14 bg-gradient-to-br from-[#2D4A27] to-[#1A2F1A] opacity-85 transform rotate-12" style={{clipPath: 'polygon(0% 20%, 60% 0%, 100% 40%, 80% 100%, 20% 90%)'}}></div>
+                <div className="absolute bottom-16 right-12 w-24 h-18 bg-gradient-to-br from-[#3A5B35] to-[#2D4A27] opacity-75 transform -rotate-6" style={{clipPath: 'polygon(10% 0%, 90% 20%, 100% 80%, 70% 100%, 0% 70%)'}}></div>
+                <div className="absolute top-20 right-16 w-14 h-10 bg-gradient-to-br from-[#2D4A27] to-[#1A2F1A] opacity-80 transform rotate-45" style={{clipPath: 'polygon(0% 0%, 100% 30%, 80% 100%, 20% 70%)'}}></div>
+                <div className="absolute bottom-20 left-16 w-10 h-16 bg-gradient-to-br from-[#3A5B35] to-[#2D4A27] opacity-70" style={{clipPath: 'polygon(20% 0%, 80% 10%, 100% 60%, 60% 100%, 0% 80%)'}}></div>
                 
-                {/* Enhanced Cloud Layer with Animation */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/25 via-white/5 to-white/15 animate-pulse opacity-70"></div>
-                <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-pulse" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
+                {/* Subtle Cloud Layer */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/15 via-transparent to-white/8 opacity-60"></div>
                 
-                {/* Atmosphere Glow - Enhanced */}
-                <div className="absolute inset-0 rounded-full shadow-[0_0_80px_#00E3FF,inset_0_0_80px_rgba(28,120,192,0.4)]"></div>
-                <div className="absolute inset-0 rounded-full bg-gradient-radial from-transparent via-transparent to-[#00E3FF]/10"></div>
+                {/* Atmospheric Glow */}
+                <div className="absolute inset-0 rounded-full shadow-[0_0_60px_rgba(100,149,237,0.4)]"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-radial from-transparent via-transparent to-[#4A90E2]/10"></div>
               </div>
               
-              {/* Day/Night Terminator Line */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-black/20 to-transparent opacity-60 transform rotate-45"></div>
+              {/* Day/Night Terminator */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-black/30 to-transparent opacity-40 transform rotate-45"></div>
+            </div>
+            
+            {/* Professional Orbital Paths */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              {/* Primary Orbit - Subtle and Professional */}
+              <div className="absolute rounded-full border border-[#4A90E2]/20 animate-pulse" 
+                   style={{ 
+                     width: '520px', 
+                     height: '520px',
+                     animationDuration: '4s',
+                     animationDelay: '0s'
+                   }}>
+              </div>
               
-              {/* Subtle Earth Rotation */}
-              <div className="absolute inset-0 rounded-full animate-spin opacity-40" style={{ animationDuration: '120s' }}>
-                <div className="absolute top-6 left-8 w-2 h-2 bg-white/60 rounded-full"></div>
-                <div className="absolute bottom-8 right-6 w-1.5 h-1.5 bg-white/40 rounded-full"></div>
-                <div className="absolute top-1/2 left-4 w-1 h-1 bg-white/50 rounded-full"></div>
+              {/* Secondary Orbit - More Distant */}
+              <div className="absolute rounded-full border border-dashed border-[#6B93D6]/15 animate-pulse" 
+                   style={{ 
+                     width: '580px', 
+                     height: '580px',
+                     animationDuration: '6s',
+                     animationDelay: '2s'
+                   }}>
               </div>
             </div>
             
-            {/* Enhanced Orbital Path with Glow */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-[#00E3FF]/50 animate-pulse shadow-[0_0_20px_#00E3FF]/30" 
-                 style={{ width: '550px', height: '550px', margin: '-50px' }}></div>
-            <div className="absolute inset-0 rounded-full border border-dotted border-[#9A6BFF]/30 animate-pulse" 
-                 style={{ width: '580px', height: '580px', margin: '-65px', animationDelay: '1s' }}></div>
-            
-            {/* Enhanced Orbiting Satellite with Particle Trail */}
+            {/* Professional Satellite */}
             <div className="absolute inset-0 animate-spin" style={{ 
-              animationDuration: '25s',
-              width: '550px', 
-              height: '550px', 
-              margin: '-50px' 
+              animationDuration: '30s',
+              width: '520px', 
+              height: '520px', 
+              margin: '-50px',
+              animationTimingFunction: 'linear'
             }}>
               <div className="relative w-full h-full">
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                  {/* Enhanced Realistic Satellite */}
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  {/* Realistic Professional Satellite */}
                   <div className="relative">
-                    {/* Satellite Body - Enhanced */}
-                    <div className="w-8 h-10 bg-gradient-to-b from-[#E0E0E0] via-[#C0C0C0] to-[#808080] rounded-sm shadow-2xl border border-[#A0A0A0]/50">
-                      {/* Solar Panels - Enhanced */}
-                      <div className="absolute -left-6 top-3 w-12 h-1.5 bg-gradient-to-r from-[#1C78C0] to-[#00E3FF] opacity-90 shadow-lg shadow-[#1C78C0]/50"></div>
-                      <div className="absolute -right-6 top-3 w-12 h-1.5 bg-gradient-to-r from-[#00E3FF] to-[#1C78C0] opacity-90 shadow-lg shadow-[#1C78C0]/50"></div>
-                      {/* Communication Array */}
-                      <div className="absolute top-0 left-1/2 w-1 h-4 bg-gradient-to-t from-[#FFD700] to-[#FF8C42] transform -translate-x-1/2 -translate-y-4 shadow-md"></div>
-                      {/* Status Lights */}
-                      <div className="absolute top-1 left-1 w-1 h-1 bg-[#00E3FF] rounded-full animate-pulse"></div>
-                      <div className="absolute top-1 right-1 w-1 h-1 bg-[#FF8C42] rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                    {/* Main Satellite Body */}
+                    <div className="w-6 h-8 bg-gradient-to-b from-[#D0D0D0] via-[#A8A8A8] to-[#808080] rounded-sm shadow-lg border border-[#999]/30">
+                      {/* Solar Panels - Professional Design */}
+                      <div className="absolute -left-4 top-2 w-8 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] shadow-sm"></div>
+                      <div className="absolute -right-4 top-2 w-8 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1E3A8A] shadow-sm"></div>
+                      
+                      {/* Communication Antenna */}
+                      <div className="absolute top-0 left-1/2 w-0.5 h-3 bg-gradient-to-t from-[#FCD34D] to-[#F59E0B] transform -translate-x-1/2 -translate-y-3"></div>
+                      
+                      {/* Status Indicator */}
+                      <div className="absolute top-0.5 left-1 w-0.5 h-0.5 bg-[#3B82F6] rounded-full animate-pulse"></div>
                     </div>
                     
-                    {/* Satellite Glow and Particle Trail */}
-                    <div className="absolute inset-0 rounded-sm shadow-[0_0_30px_#FF8C42] opacity-70 animate-pulse"></div>
-                    
-                    {/* Particle Trail Effect */}
-                    <div className="absolute top-1/2 -left-8 w-6 h-0.5 bg-gradient-to-l from-[#00E3FF]/60 to-transparent opacity-80"></div>
-                    <div className="absolute top-1/2 -left-12 w-4 h-0.5 bg-gradient-to-l from-[#9A6BFF]/40 to-transparent opacity-60" style={{ animationDelay: '0.2s' }}></div>
+                    {/* Subtle Satellite Glow */}
+                    <div className="absolute inset-0 rounded-sm shadow-[0_0_15px_rgba(59,130,246,0.3)] opacity-60"></div>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Data Stream Effects */}
+            {/* Professional Data Points */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-[#00E3FF] rounded-full animate-ping"></div>
-              <div className="absolute bottom-1/3 right-1/3 w-1 h-1 bg-[#FF8C42] rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-[#9A6BFF] rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute top-1/4 left-1/4 w-0.5 h-0.5 bg-[#3B82F6] rounded-full animate-ping opacity-60"></div>
+              <div className="absolute bottom-1/3 right-1/3 w-0.5 h-0.5 bg-[#6B93D6] rounded-full animate-ping opacity-40" style={{ animationDelay: '1.5s' }}></div>
+              <div className="absolute top-1/2 right-1/4 w-0.5 h-0.5 bg-[#4A90E2] rounded-full animate-ping opacity-50" style={{ animationDelay: '3s' }}></div>
             </div>
           </div>
         </div>
 
-        {/* Hero Content - Positioned with Clear Separation */}
+        {/* Hero Content */}
         <div className="text-center px-4 relative z-10 max-w-6xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-[#1C78C0] via-[#00E3FF] to-[#9A6BFF] bg-clip-text text-transparent">
             VIKASANA
@@ -274,7 +279,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mission Section - Updated Content */}
+      {/* Mission Section */}
       <section className="py-24 md:py-32 relative z-10 border-t border-[#1C78C0]/30">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-12 bg-gradient-to-r from-[#1C78C0] to-[#00E3FF] bg-clip-text text-transparent">
@@ -423,7 +428,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Application Section - Updated Text */}
+      {/* Application Section */}
       <section className="py-24 md:py-32 border-t border-[#FF8C42]/20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
