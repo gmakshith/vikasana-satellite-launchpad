@@ -177,95 +177,16 @@ const Index = () => {
     <div className="min-h-screen bg-[#0B0F1A] text-[#E0E0E0] overflow-x-hidden relative font-mono">
       <SpaceBackground />
       
-      {/* Hero Section - Professional Earth and Satellite */}
+      {/* Hero Section - Simple Space Theme */}
       <section className="min-h-screen flex flex-col justify-center items-center relative px-4">
-        {/* Professional 3D Earth and Satellite Container */}
-        <div className="flex items-center justify-center mb-20 relative">
-          <div className="relative">
-            {/* Realistic Earth */}
-            <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-full relative overflow-hidden shadow-2xl">
-              {/* Earth Base with Realistic Gradients */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#4A90E2] via-[#2E5F8A] to-[#1A4A73] relative">
-                {/* Realistic Continents */}
-                <div className="absolute top-12 left-8 w-20 h-14 bg-gradient-to-br from-[#2D4A27] to-[#1A2F1A] opacity-85 transform rotate-12" style={{clipPath: 'polygon(0% 20%, 60% 0%, 100% 40%, 80% 100%, 20% 90%)'}}></div>
-                <div className="absolute bottom-16 right-12 w-24 h-18 bg-gradient-to-br from-[#3A5B35] to-[#2D4A27] opacity-75 transform -rotate-6" style={{clipPath: 'polygon(10% 0%, 90% 20%, 100% 80%, 70% 100%, 0% 70%)'}}></div>
-                <div className="absolute top-20 right-16 w-14 h-10 bg-gradient-to-br from-[#2D4A27] to-[#1A2F1A] opacity-80 transform rotate-45" style={{clipPath: 'polygon(0% 0%, 100% 30%, 80% 100%, 20% 70%)'}}></div>
-                <div className="absolute bottom-20 left-16 w-10 h-16 bg-gradient-to-br from-[#3A5B35] to-[#2D4A27] opacity-70" style={{clipPath: 'polygon(20% 0%, 80% 10%, 100% 60%, 60% 100%, 0% 80%)'}}></div>
-                
-                {/* Subtle Cloud Layer */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/15 via-transparent to-white/8 opacity-60"></div>
-                
-                {/* Atmospheric Glow */}
-                <div className="absolute inset-0 rounded-full shadow-[0_0_60px_rgba(100,149,237,0.4)]"></div>
-                <div className="absolute inset-0 rounded-full bg-gradient-radial from-transparent via-transparent to-[#4A90E2]/10"></div>
-              </div>
-              
-              {/* Day/Night Terminator */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-black/30 to-transparent opacity-40 transform rotate-45"></div>
-            </div>
-            
-            {/* Professional Orbital Paths */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* Primary Orbit - Subtle and Professional */}
-              <div className="absolute rounded-full border border-[#4A90E2]/20 animate-pulse" 
-                   style={{ 
-                     width: '520px', 
-                     height: '520px',
-                     animationDuration: '4s',
-                     animationDelay: '0s'
-                   }}>
-              </div>
-              
-              {/* Secondary Orbit - More Distant */}
-              <div className="absolute rounded-full border border-dashed border-[#6B93D6]/15 animate-pulse" 
-                   style={{ 
-                     width: '580px', 
-                     height: '580px',
-                     animationDuration: '6s',
-                     animationDelay: '2s'
-                   }}>
-              </div>
-            </div>
-            
-            {/* Professional Satellite */}
-            <div className="absolute inset-0 animate-spin" style={{ 
-              animationDuration: '30s',
-              width: '520px', 
-              height: '520px', 
-              margin: '-50px',
-              animationTimingFunction: 'linear'
-            }}>
-              <div className="relative w-full h-full">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  {/* Realistic Professional Satellite */}
-                  <div className="relative">
-                    {/* Main Satellite Body */}
-                    <div className="w-6 h-8 bg-gradient-to-b from-[#D0D0D0] via-[#A8A8A8] to-[#808080] rounded-sm shadow-lg border border-[#999]/30">
-                      {/* Solar Panels - Professional Design */}
-                      <div className="absolute -left-4 top-2 w-8 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] shadow-sm"></div>
-                      <div className="absolute -right-4 top-2 w-8 h-1 bg-gradient-to-r from-[#3B82F6] to-[#1E3A8A] shadow-sm"></div>
-                      
-                      {/* Communication Antenna */}
-                      <div className="absolute top-0 left-1/2 w-0.5 h-3 bg-gradient-to-t from-[#FCD34D] to-[#F59E0B] transform -translate-x-1/2 -translate-y-3"></div>
-                      
-                      {/* Status Indicator */}
-                      <div className="absolute top-0.5 left-1 w-0.5 h-0.5 bg-[#3B82F6] rounded-full animate-pulse"></div>
-                    </div>
-                    
-                    {/* Subtle Satellite Glow */}
-                    <div className="absolute inset-0 rounded-sm shadow-[0_0_15px_rgba(59,130,246,0.3)] opacity-60"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Professional Data Points */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-1/4 left-1/4 w-0.5 h-0.5 bg-[#3B82F6] rounded-full animate-ping opacity-60"></div>
-              <div className="absolute bottom-1/3 right-1/3 w-0.5 h-0.5 bg-[#6B93D6] rounded-full animate-ping opacity-40" style={{ animationDelay: '1.5s' }}></div>
-              <div className="absolute top-1/2 right-1/4 w-0.5 h-0.5 bg-[#4A90E2] rounded-full animate-ping opacity-50" style={{ animationDelay: '3s' }}></div>
-            </div>
+        {/* Simple Space Icon */}
+        <div className="mb-16 relative">
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 flex items-center justify-center">
+            <Satellite className="w-full h-full text-[#00E3FF] opacity-80" />
           </div>
+          
+          {/* Subtle glow effect */}
+          <div className="absolute inset-0 bg-[#00E3FF]/20 rounded-full blur-xl opacity-50"></div>
         </div>
 
         {/* Hero Content */}
