@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Satellite, Sparkles, Star, Mail, Calendar, Clock } from "lucide-react";
@@ -9,7 +10,7 @@ const positions = [
   {
     id: "eps",
     title: "Electrical Power System (EPS)",
-    shortDescription: "🛰️ Design and develop satellite power systems and battery management",
+    shortDescription: "Design and develop satellite power systems and battery management",
     detailedDescription: "As an EPS Engineer, you'll be responsible for designing the heart of our satellite - the power system. You'll work on battery management systems, solar panel configurations, and power distribution networks that keep our satellite operational in the harsh space environment.",
     responsibilities: [
       "Solid foundation in basic Electrical and Electronics",
@@ -26,7 +27,7 @@ const positions = [
   {
     id: "obc",
     title: "Onboard Computer",
-    shortDescription: "🧠 Develop satellite computing systems and microcontroller interfaces",
+    shortDescription: "Develop satellite computing systems and microcontroller interfaces",
     detailedDescription: "Join our OBC team to develop the brain of our satellite. You'll work on embedded systems, real-time operating systems, and the critical software that controls all satellite operations from orbit.",
     responsibilities: [
       "Strong understanding of digital electronics and microcontroller fundamentals",
@@ -43,7 +44,7 @@ const positions = [
   {
     id: "systems",
     title: "Systems Engineer", 
-    shortDescription: "📐 Coordinate system design and perform mission analysis",
+    shortDescription: "Coordinate system design and perform mission analysis",
     detailedDescription: "As a Systems Engineer, you'll be the architect of our satellite mission. You'll define requirements, coordinate between different subsystems, and ensure our satellite meets all mission objectives.",
     responsibilities: [
       "Familiarity or willingness to work with system engineering concepts (requirements, interfaces, budgets)",
@@ -63,7 +64,7 @@ const positions = [
   {
     id: "payload",
     title: "Payload Engineer",
-    shortDescription: "🎯 Research and integrate satellite payloads and instruments", 
+    shortDescription: "Research and integrate satellite payloads and instruments", 
     detailedDescription: "Shape the scientific mission of our satellite by researching, selecting, and integrating cutting-edge payloads. You'll work on cameras, sensors, and instruments that will accomplish our mission objectives.",
     responsibilities: [
       "Research various payloads suitable for student satellite missions (e.g. cameras, sensors, communications, scientific instruments)",
@@ -81,7 +82,7 @@ const positions = [
   {
     id: "mechanical",
     title: "Mechanical Engineer",
-    shortDescription: "⚙️ Design mechanical structures and thermal management systems",
+    shortDescription: "Design mechanical structures and thermal management systems",
     detailedDescription: "Design the physical structure that will survive launch and operate in space. You'll work on mechanical systems, thermal management, and ensure our satellite can withstand the extreme conditions of space.",
     responsibilities: [
       "Proficiency with CAD software (Fusion 360, SolidWorks, Creo, or CATIA)",
@@ -103,7 +104,7 @@ const positions = [
   {
     id: "flight-software",
     title: "Flight Software",
-    shortDescription: "🧑‍💻 Develop embedded software for satellite operations",
+    shortDescription: "Develop embedded software for satellite operations",
     detailedDescription: "Create the software that will control our satellite in orbit. You'll develop flight software, implement communication protocols, and ensure reliable operation in the space environment.",
     responsibilities: [
       "Proficiency in C or C++ programming",
@@ -124,7 +125,7 @@ const positions = [
   {
     id: "communication",
     title: "Communication System",
-    shortDescription: "📡 Design and develop satellite communication systems",
+    shortDescription: "Design and develop satellite communication systems",
     detailedDescription: "Develop the communication systems that will allow our satellite to communicate with ground stations. You'll work on RF systems, digital modulation, and telemetry handling.",
     responsibilities: [
       "Solid foundations in digital & Analog electronics",
@@ -143,7 +144,7 @@ const positions = [
   {
     id: "project-manager",
     title: "Project Manager",
-    shortDescription: "🧭 Coordinate team activities and manage project timelines",
+    shortDescription: "Coordinate team activities and manage project timelines",
     detailedDescription: "Lead our satellite development project from conception to launch. You'll coordinate between different engineering teams, manage timelines, and ensure we meet our mission milestones.",
     responsibilities: [
       "Work together with subsystem team leads to monitor developments, spot obstacles, and guarantee on-time",
@@ -277,7 +278,7 @@ const Index = () => {
       <section className="py-24 md:py-32 relative z-10 border-t border-[#1C78C0]/30">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-12 bg-gradient-to-r from-[#1C78C0] to-[#00E3FF] bg-clip-text text-transparent">
-            🚀 Student Satellite Mission Recruitment Drive
+            Student Satellite Mission Recruitment Drive
           </h2>
           <div className="max-w-6xl mx-auto space-y-8">
             <p className="text-lg md:text-xl text-[#E0E0E0] leading-relaxed font-semibold">
@@ -301,7 +302,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#9A6BFF] to-[#00E3FF] bg-clip-text text-transparent">
-              📢 OPEN POSITIONS
+              OPEN POSITIONS
             </h2>
             <p className="text-xl text-[#E0E0E0]/90 max-w-2xl mx-auto">
               Choose your path in satellite development. Each role offers unique challenges and opportunities to shape the future of space technology.
@@ -317,7 +318,9 @@ const Index = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1C78C0]/5 via-transparent to-[#9A6BFF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                <div className="text-4xl mb-4 relative z-10">{position.icon}</div>
+                <div className="mb-4 relative z-10">
+                  <Satellite className="h-8 w-8 text-[#00E3FF]" />
+                </div>
                 <h3 className="text-xl font-bold mb-3 text-[#E0E0E0] group-hover:text-[#FF8C42] transition-colors relative z-10">
                   {position.title}
                 </h3>
@@ -352,7 +355,7 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#1C78C0]/5 via-transparent to-[#9A6BFF]/5"></div>
               <h3 className="text-2xl font-bold mb-6 text-[#E0E0E0] flex items-center gap-2 relative z-10">
                 <Star className="h-6 w-6 text-[#FFD700]" />
-                🌟 GENERAL REQUIREMENTS
+                GENERAL REQUIREMENTS
               </h3>
               <ul className="space-y-3 relative z-10">
                 <li className="flex items-start gap-2 text-[#E0E0E0]/90">
@@ -391,7 +394,7 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#9A6BFF]/5 via-transparent to-[#FF8C42]/5"></div>
               <h3 className="text-2xl font-bold mb-6 text-[#E0E0E0] flex items-center gap-2 relative z-10">
                 <Sparkles className="h-6 w-6 text-[#FF8C42]" />
-                🎁 PERKS & BENEFITS
+                PERKS & BENEFITS
               </h3>
               <ul className="space-y-3 relative z-10">
                 <li className="flex items-start gap-2 text-[#E0E0E0]/90">
@@ -425,7 +428,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-[#FF8C42] to-[#FFD700] bg-clip-text text-transparent">
-              📄 HOW TO APPLY
+              HOW TO APPLY
             </h2>
             
             {/* Updated Application Text - Concise Version */}
@@ -441,7 +444,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {/* Application Requirements */}
               <div className="bg-[#0B0F1A]/80 border border-[#1C78C0]/30 rounded-xl p-6 backdrop-blur-sm">
-                <h3 className="text-xl font-bold mb-4 text-[#1C78C0]">📌 Application Requirements:</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#1C78C0]">Application Requirements:</h3>
                 <ul className="space-y-2 text-left">
                   <li className="flex items-start gap-2 text-[#E0E0E0]/90">
                     <div className="w-2 h-2 bg-[#1C78C0] rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
@@ -460,15 +463,15 @@ const Index = () => {
 
               {/* Important Dates */}
               <div className="bg-[#0B0F1A]/80 border border-[#9A6BFF]/30 rounded-xl p-6 backdrop-blur-sm">
-                <h3 className="text-xl font-bold mb-4 text-[#9A6BFF]">📅 Important Dates:</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#9A6BFF]">Important Dates:</h3>
                 <div className="space-y-3 text-left">
                   <div className="flex items-center gap-2 text-[#E0E0E0]/90">
                     <Calendar className="h-4 w-4 text-[#FF8C42]" />
-                    <span><strong className="text-[#FF8C42]">🗓️ Last Date of Application:</strong> 19-06-2025</span>
+                    <span><strong className="text-[#FF8C42]">Last Date of Application:</strong> 19-06-2025</span>
                   </div>
                   <div className="flex items-center gap-2 text-[#E0E0E0]/90">
                     <Clock className="h-4 w-4 text-[#FFD700]" />
-                    <span><strong className="text-[#FFD700]">📅 Interview Dates:</strong> 21-06-2025 to 22-06-2025 (Offline/Online)</span>
+                    <span><strong className="text-[#FFD700]">Interview Dates:</strong> 21-06-2025 to 22-06-2025 (Offline/Online)</span>
                   </div>
                 </div>
               </div>
@@ -476,7 +479,7 @@ const Index = () => {
 
             {/* Contact Info */}
             <div className="bg-gradient-to-r from-[#1C78C0]/10 via-[#9A6BFF]/10 to-[#FF8C42]/10 border border-[#FFD700]/30 rounded-xl p-6 backdrop-blur-sm">
-              <h3 className="text-lg md:text-xl font-bold mb-4 text-[#FFD700]">📧 For any queries, please reach out to:</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-[#FFD700]">For any queries, please reach out to:</h3>
               <div className="flex justify-center items-center gap-2">
                 <Mail className="h-5 w-5 text-[#00E3FF]" />
                 <a href="mailto:v4vaayuvega@gmail.com" className="text-base md:text-lg text-[#00E3FF] hover:text-[#FF8C42] font-semibold transition-colors">
