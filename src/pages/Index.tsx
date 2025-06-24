@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Star, Mail, Calendar, Clock, ChevronDown } from "lucide-react";
+import { Satellite, Sparkles, Star, Mail, Calendar, Clock, ChevronDown } from "lucide-react";
 import RoleDetailModal from "@/components/RoleDetailModal";
 import RegistrationModal from "@/components/RegistrationModal";
 import SpaceBackground from "@/components/SpaceBackground";
