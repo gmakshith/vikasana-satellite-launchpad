@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Satellite, Sparkles, Star, Mail, Calendar, Clock } from "lucide-react";
+import { Satellite, Sparkles, Star, Mail, Calendar, Clock, ArrowDown } from "lucide-react";
 import RoleDetailModal from "@/components/RoleDetailModal";
 import RegistrationModal from "@/components/RegistrationModal";
 import SpaceBackground from "@/components/SpaceBackground";
@@ -177,26 +177,42 @@ const Index = () => {
     <div className="min-h-screen bg-[#0B0F1A] text-[#E0E0E0] overflow-x-hidden relative font-mono">
       <SpaceBackground />
       
-      {/* Hero Section - Simple Space Theme */}
+      {/* Hero Section - Updated with larger satellite */}
       <section className="min-h-screen flex flex-col justify-center items-center relative px-4">
-        {/* Simple Space Icon */}
-        <div className="mb-16 relative">
-          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 flex items-center justify-center">
-            <Satellite className="w-full h-full text-[#00E3FF] opacity-80" />
+        {/* Larger Satellite Icon with professional effects */}
+        <div className="mb-16 relative group">
+          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 flex items-center justify-center relative">
+            <Satellite className="w-full h-full text-[#00E3FF] opacity-90 drop-shadow-2xl transform transition-transform duration-700 group-hover:scale-105" />
+            
+            {/* Professional glow effects */}
+            <div className="absolute inset-0 bg-[#00E3FF]/20 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1C78C0]/30 to-[#9A6BFF]/30 rounded-full blur-2xl opacity-40"></div>
+            
+            {/* Orbiting particles effect */}
+            <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
+              <div className="absolute top-4 left-1/2 w-2 h-2 bg-[#FFD700] rounded-full opacity-80"></div>
+              <div className="absolute bottom-4 right-1/4 w-1.5 h-1.5 bg-[#FF8C42] rounded-full opacity-70"></div>
+            </div>
+            <div className="absolute inset-0 animate-spin" style={{ animationDuration: '30s', animationDirection: 'reverse' }}>
+              <div className="absolute top-1/4 right-4 w-1 h-1 bg-[#00E3FF] rounded-full opacity-90"></div>
+              <div className="absolute bottom-1/3 left-4 w-1.5 h-1.5 bg-[#9A6BFF] rounded-full opacity-60"></div>
+            </div>
           </div>
-          
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 bg-[#00E3FF]/20 rounded-full blur-xl opacity-50"></div>
         </div>
 
         {/* Hero Content */}
         <div className="text-center px-4 relative z-10 max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-[#1C78C0] via-[#00E3FF] to-[#9A6BFF] bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-[#1C78C0] via-[#00E3FF] to-[#9A6BFF] bg-clip-text text-transparent drop-shadow-lg">
             VIKASANA
           </h1>
-          <p className="text-lg md:text-2xl lg:text-3xl mb-12 text-[#00E3FF] font-light tracking-wide">
+          <p className="text-lg md:text-2xl lg:text-3xl mb-12 text-[#00E3FF] font-light tracking-wide drop-shadow-md">
             Student Satellite Team
           </p>
+          
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ArrowDown className="w-6 h-6 text-[#00E3FF] opacity-70" />
+          </div>
         </div>
       </section>
 
