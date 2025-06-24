@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Satellite, Sparkles, Star, Mail, Calendar, Clock, ChevronDown } from "lucide-react";
+import { Sparkles, Star, Mail, Calendar, Clock, ChevronDown } from "lucide-react";
 import RoleDetailModal from "@/components/RoleDetailModal";
 import RegistrationModal from "@/components/RegistrationModal";
 import SpaceBackground from "@/components/SpaceBackground";
@@ -189,7 +189,7 @@ const Index = () => {
       <section className="min-h-screen flex flex-col justify-center items-center relative px-4">
         {/* Official Logo with Professional Effects */}
         <div className="mb-16 relative animate-fade-in">
-          <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 flex items-center justify-center transform hover:scale-105 transition-all duration-500 ease-out">
+          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 flex items-center justify-center transform hover:scale-105 transition-all duration-500 ease-out">
             <img 
               src="/lovable-uploads/6925f3f5-f9d2-42ab-83f5-0a601c228f5e.png" 
               alt="Vikasana Official Logo" 
@@ -212,7 +212,7 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Scroll Down Indicator - Positioned at bottom */}
+        {/* Scroll Down Indicator - Positioned at bottom with proper spacing */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in opacity-0" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
           <button 
             onClick={scrollToMission}
