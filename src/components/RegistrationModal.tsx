@@ -73,9 +73,9 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
         rollNumber: formData.rollNumber,
         yearOfStudy: formData.year,
         branch: formData.branch,
-        selectedRole: formData.selectedRole,
         linkedin: formData.linkedinUrl,
         github: formData.githubUrl,
+        role: formData.selectedRole,
         tools: formData.tools,
         resumeUrl: formData.resumeUrl,
         experience: formData.experience,
@@ -84,7 +84,7 @@ const RegistrationModal = ({ position, isOpen, onClose }: RegistrationModalProps
 
       console.log("Submitting form data:", payload);
 
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyuu2u1y0VxE8kYRD0FKfy4f_4vj9SSYA5zcoSXLx0So5bNxlta3tq38wVmz_ZGQvqj/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbynPNkW1cUwlPk0h8f4bUjJmZ9zAV8wnbp9pX9gGMswdly8nFC6_QhSIqSjJ3Yh9UKw/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
